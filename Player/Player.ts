@@ -26,7 +26,6 @@ export class Player {
     return this.hand.length;
   }
 
-  // Get the player's name
   getName(): string {
     return this.name;
   }
