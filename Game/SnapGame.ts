@@ -1,6 +1,9 @@
-import { Player } from "../Player/Player.ts";
-import { Card } from "../Card/Card.ts";
-import { Deck } from "../Deck/Deck.ts";
+import { Player } from "../Player/Player";
+import { Card } from "../Card/Card";
+import { Deck } from "../Deck/Deck";
+
+const VARIATION_FACE = "face";
+const VARIATION_FACE_AND_SUIT = "faceAndSuit";
 
 //Define the SnapGame class to manage the overall game logic
 export class SnapGame {
@@ -68,9 +71,9 @@ export class SnapGame {
     if (this.table.length === 0) return false;
 
     const topCard = this.table[this.table.length - 1];
-    if (this.variation === "face") {
+    if (this.variation === VARIATION_FACE) {
       return card.value === topCard.value;
-    } else if (this.variation === "faceAndSuit") {
+    } else if (this.variation === VARIATION_FACE_AND_SUIT) {
       return card.value === topCard.value && card.suit === topCard.suit;
     }
     return false;
