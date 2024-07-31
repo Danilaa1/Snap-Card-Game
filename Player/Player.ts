@@ -1,4 +1,4 @@
-import { Card } from "../Card/Card.ts";
+import { Card } from "../Card/Card";
 
 //Define the Player class to manage each player's hand pf cards
 export class Player {

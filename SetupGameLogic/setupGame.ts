@@ -1,6 +1,9 @@
 import * as readline from "readline";
 import { SnapGame } from "../Game/SnapGame";
 
+const DEFAULT_MAX_ROUNDS = 15;
+const DEFAULT_VARIATION: "face" | "faceAndSuit" = "face";
+
 // Function to set up the game with user input
 export function setupGame() {
   const rl = readline.createInterface({
@@ -36,7 +39,7 @@ export function setupGame() {
 
       // Asking for the number of cards per player
       rl.question(
-        `Number of cards per player (1-${maxCardsPerPlayer})`,
+        `Number of cards per player (1-${maxCardsPerPlayer}): `,
         (numCardsStr) => {
           const numCardsPerPlayer = parseInt(numCardsStr, 10);
           if (
@@ -52,8 +55,8 @@ export function setupGame() {
           }
 
           // Set default values for the maximum number of rounds and variation
-          const maxRounds = 15;
-          const variation: "face" | "faceAndSuit" = "face";
+          const maxRounds = DEFAULT_MAX_ROUNDS;
+          const variation = DEFAULT_VARIATION;
 
           // Create and start the game instance with the user inputs
           const game = new SnapGame(numPlayers, numDecks, maxRounds, variation);

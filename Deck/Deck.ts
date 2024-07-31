@@ -1,4 +1,4 @@
-import { Card } from "../Card/Card.ts";
+import { Card } from "../Card/Card";
 
 // Deck class to manage a collection of cards
 export class Deck {
